@@ -135,14 +135,14 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="pages/examples/invoice.html" class="nav-link">
+                  <a href="/transaksiPenjualan" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Transaksi Penjualan</p>
                   </a>
                 </li>
 
                 <li class="nav-item">
-                  <a href="pages/examples/contact-us.html" class="nav-link">
+                  <a href="/transaksiPembelian" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Transaksi Pembelian</p>
                   </a>

@@ -17,6 +17,12 @@ Route::get('/', function () {
 Route::get('/stok', function () {
     return view('Stock.stockForm');
 });
+Route::get('/transaksiPenjualan', function () {
+    return view('Transaksi.transaksiPenjualan');
+});
+Route::get('/transaksiPembelian', function () {
+    return view('Transaksi.transaksiPembelian');
+});
 
 Auth::routes();
 
