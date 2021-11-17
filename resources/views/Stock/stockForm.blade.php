@@ -76,7 +76,7 @@
                 <table class="table table-head-fixed text-nowrap">
                   <thead>
                     <tr>
-                      <th>ID</th>
+                      <th>IDBarang</th>
                       <th>Nama Barang</th>
                       <th>Kategori</th>
                       <th>Ukuran</th>

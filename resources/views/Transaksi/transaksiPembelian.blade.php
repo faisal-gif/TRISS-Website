@@ -14,7 +14,18 @@
                 <div class="form-group row">
                         <label>ID Transaksi</label>
                         <input type="text" class="form-control" placeholder="Enter ...">
-                        </div>
+                </div>
+
+                <div class="form-group row">
+                      <label>ID Barang</label>
+                        <select class="form-control">
+                          <option>option 1</option>
+                          <option>option 2</option>
+                          <option>option 3</option>
+                          <option>option 4</option>
+                          <option>option 5</option>
+                        </select>
+                </div>
 
                 <div class="form-group row">
                         <label>Jumlah Barang</label>
@@ -66,6 +77,7 @@
                   <thead>
                     <tr>
                       <th>IDTransaksi</th>
+                      <th>IDBarang</th>
                       <th>Jumlah Barang</th>
                       <th>Total Harga</th>
                       <th>Tanggal Pengeluaran</th>
