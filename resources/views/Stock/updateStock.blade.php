@@ -9,7 +9,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form class="form-horizontal" action="/inputBarang" method="POST" enctype="multipart/form-data">
+              <form class="form-horizontal" action="/updateBarang" method="POST" enctype="multipart/form-data">
                  
                 <input type="hidden" name="id_user" value="{{ Auth::user()->id }}" >
                 
@@ -18,19 +18,19 @@
                
                 <div class="form-group row">
                         <label>Nama Barang</label>
-                        <input type="text" class="form-control" name="nama_barang" placeholder="Enter ...">
+                        <input type="text" class="form-control" name="nama_barang" value="">
                     </div>
                 <div class="form-group row">
                       <label>Ukuran</label>
-                        <input type="text" class="form-control" name="ukuran" placeholder="Enter ...">
+                        <input type="text" class="form-control" name="ukuran" value="">
                     </div>
                 <div class="form-group row">
                         <label>Jumlah</label>
-                        <input type="number" class="form-control" name="jumlah" placeholder="Enter ...">
+                        <input type="number" class="form-control" name="jumlah" value="">
                     </div>                       
                 <div class="form-group row">
                         <label>Harga Barang</label>
-                        <input type="number" class="form-control" name="harga_barang" placeholder="Enter ...">
+                        <input type="number" class="form-control" name="harga_barang" value="">
                     </div>     
                  
                 </div>

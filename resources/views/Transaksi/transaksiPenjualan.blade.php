@@ -9,27 +9,33 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form class="form-horizontal">
+              <form class="form-horizontal" action="/saveTransaksi" method="POST" enctype="multipart/form-data">
+              <input type="hidden" name="id_user" value="{{ Auth::user()->id }}" > 
+                @csrf
                 <div class="card-body">
                 <div class="form-group row">
-                        <label>ID Transaksi</label>
-                        <input type="text" class="form-control" placeholder="Enter ...">
+                        <label>ID Barang</label>
+                        <select class="form-control select2" name="id_barang">
+                    <option selected="selected">Pilih</option>
+                    @foreach ($br as $key )
+                  <option value="{{ $key->id }}"> 
+                    {{ $key->id }} 
+                    @endforeach
+                  </select>
+                      </select>
                         </div>
-                <div class="form-group row">
-                        <label>Jumlah Barang</label>
-                        <input type="number" class="form-control" placeholder="Enter ...">
-                </div>
-
-                <div class="form-group row">
-                        <label>Tanggal Transaksi</label>
-                        <input type="date" class="form-control" placeholder="Enter ...">
+                        <div class="form-group row">
+                        <label>Nama Barang</label>
+                        <input type="text" class="form-control" placeholder="Enter ..." >
                 </div>
             
                 <div class="form-group row">
-                      <label>Total Harga</label>
-                        <input type="number" class="form-control" placeholder="Enter ...">
-                    </div>   
-                 
+                        <label>Jumlah Barang</label>
+                        <input type="number" class="form-control" placeholder="Enter ..." name="jumlah_barang">
+                </div>
+
+               
+               
                 </div>
                 <!-- /.card-body -->
 
@@ -65,13 +71,25 @@
                   <thead>
                     <tr>
                       <th>IDTransaksi</th>
+                      <th>IDBarang</th>
                       <th>Jumlah Barang</th>
                       <th>Tanggal Transaksi</th>
                       <th>Total Harga</th>
                     </tr>
                   </thead>
                   <tbody>
-
+                  @foreach($ts as $t)
+            <tr>
+            <td>{{$t->id}}</td>
+            <td>{{$t->id_barang}}</td>
+            <td>{{$t->jumlah_barang}}</td>
+            <td>{{$t->created_at}}</td>
+            <td>{{$t->total_harga}}</td>
+            <!-- <td><a class="btn btn-primary" href="/editStat/{{$t->id}}" >kembali</a> -->
+            </td>
+      
+            </tr>
+   @endforeach
                     </tbody>
                 </table>
               </div>

@@ -10,20 +10,23 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('dashboard');
 });
-Route::get('/stok', function () {
-    return view('Stock.stockForm');
+Route::get('/home', function () {
+    return view('dashboard');
 });
-Route::get('/transaksiPenjualan', function () {
-    return view('Transaksi.transaksiPenjualan');
-});
-Route::get('/transaksiPembelian', function () {
-    return view('Transaksi.transaksiPembelian');
-});
+Route::get('/stok','HomeController@barang')->name('r-Barang');
+Route::post('/inputBarang','HomeController@saveBarang')->name('i-Barang');
 
+Route::get('/transaksiPenjualan','HomeController@transaksi')->name('t-Barang');
+Route::post('/saveTransaksi','HomeController@saveTransaksi')->name('t-Barang');
+
+Route::get('/transaksiPembelian','HomeController@pembelian')->name('t-pembelian');
+Route::post('/savePembelian','HomeController@savePembelian')->name('t-pembelian');
+
+
+Route::get('/cetakLaporan','HomeController@cetakLaporan')->name('c-laporan');
 Auth::routes();
 
 Route::get('/tes', 'HomeController@index')->name('home');
