@@ -154,13 +154,6 @@
                     <p>Stok</p>
                   </a>
                 </li>
-
-                <li class="nav-item">
-                  <a href="pages/examples/contact-us.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Contact us</p>
-                  </a>
-                </li>
               </ul>
             </li>
 
@@ -208,7 +201,7 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="pages/examples/invoice.html" class="nav-link">
+                  <a href="/formKatalog" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Form Katalog</p>
                   </a>

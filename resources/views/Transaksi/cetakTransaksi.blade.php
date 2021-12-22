@@ -48,7 +48,7 @@
                 </table>
               </div>
               <div class="card-footer">
-                  <a href="#"  class="btn btn-primary">Cetak</a>
+                  <a href="/cetakTransaksi"  class="btn btn-primary">Cetak</a>
                 </div>
             </div>
             </div>
@@ -101,7 +101,7 @@
                 </table>
               </div>
               <div class="card-footer">
-                  <a href="#"  class="btn btn-primary">Cetak</a>
+                  <a href="/cetakPemasukan"  class="btn btn-primary">Cetak</a>
                 </div>
               <!-- /.card-body -->
             </div>

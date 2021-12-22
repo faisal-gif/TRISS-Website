@@ -5,34 +5,37 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Barang</h3>
+                <h3 class="card-title">Katalog</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form class="form-horizontal" action="/inputBarang" method="POST" enctype="multipart/form-data">
-                 
-                <input type="hidden" name="id_user" value="{{ Auth::user()->id }}" >
-                
-              @csrf
+              <form class="form-horizontal" action="/insertKatalog" method="POST" enctype="multipart/form-data">
+              <input type="hidden" name="id_user" value="{{ Auth::user()->id }}" > 
+                @csrf
                 <div class="card-body">
+                <div class="form-group row">
+                        <label>ID Barang</label>
+                        <select class="form-control select2" name="id_barang">
+                    <option selected="selected">Pilih</option>
+                    @foreach ($br as $key )
+                  <option value="{{ $key->id }}"> 
+                    {{ $key->id }} | {{ $key->nama_barang }}
+                    @endforeach
+                  </select>
+                      </select>
+                        </div>
+                        <div class="form-group row">
+                        <label>Foto</label>
+                        <input type="file" name="foto" class="form-control" placeholder="Enter ..." >
+                </div>
+            
+                <div class="form-group row">
+                        <label>Deskripsi</label>
+                        <textarea name="deskripsi" class="form-control">Enter text here...</textarea>
+                </div>
+
                
-                <div class="form-group row">
-                        <label>Nama Barang</label>
-                        <input type="text" class="form-control" name="nama_barang" placeholder="Enter ...">
-                    </div>
-                <div class="form-group row">
-                      <label>Ukuran</label>
-                        <input type="text" class="form-control" name="ukuran" placeholder="Enter ...">
-                    </div>
-                <div class="form-group row">
-                        <label>Jumlah</label>
-                        <input type="number" class="form-control" name="jumlah" placeholder="Enter ...">
-                    </div>                       
-                <div class="form-group row">
-                        <label>Harga Barang</label>
-                        <input type="number" class="form-control" name="harga_barang" placeholder="Enter ...">
-                    </div>     
-                 
+               
                 </div>
                 <!-- /.card-body -->
 
@@ -48,7 +51,7 @@
           <div class="col-md-7">
           <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Table Barang</h3>
+                <h3 class="card-title">Table Katalog</h3>
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 200px;">
@@ -67,23 +70,21 @@
                 <table class="table table-head-fixed text-nowrap">
                   <thead>
                     <tr>
-                      <th>ID</th>
-                      <th>Nama Barang</th>
-                      <th>Ukuran</th>
-                      <th>Jumlah Barang</th>
-                      <th>Harga Barang</th>
-                      <th>aksi</th>
+                      <th>IDKatalog</th>
+                      <th>IDBarang</th>
+                      <th>Foto</th>
+                      <th>Deskripsi</th>
+                      <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
-                  @foreach($barang as $b)
+                  @foreach($kt as $t)
             <tr>
-            <td>{{$b->id}}</td>
-            <td>{{$b->nama_barang}}</td>
-            <td>{{$b->ukuran}}</td>
-            <td>{{$b->jumlah}}</td>
-            <td>{{$b->harga_barang}}</td>
-            <td><a class="btn btn-primary" href="/editBarang/{{$b->id}}" >Edit</a> | <a class="btn btn-primary" href="/deleteBarang/{{$b->id}}" >Delete</a>
+            <td>{{$t->id}}</td>
+            <td>{{$t->id_barang}}</td>
+            <td>{{$t->foto}}</td>
+            <td>{{$t->deskripsi}}</td>
+            <td><a class="btn btn-primary" href="/editStat/{{$t->id}}" >kembali</a>
             </td>
       
             </tr>
